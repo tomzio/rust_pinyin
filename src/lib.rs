@@ -7,15 +7,15 @@ mod tests {
         assert_eq!("zhq123vc", get_pinyin("张华强123vc"));
     }
 }
+
 /// 功能：将汉字转成拼音首字母，用于自动完成的快捷拼音输入
 /// 参数：text, 汉字字符串，如：北京易瑞盈商贸有限公司
 /// 返回：String, 拼音首字母字符串，如：bjyrysmyxgs
 pub fn get_pinyin(text: &str) -> String {
     let mut py_get = String::new();
-    let py = PyCode::get_code();
     for t in text.chars() {
         if !t.is_ascii() {
-            for p in py.iter() {
+            for p in PY_CODE.iter() {
                 if p.contains(t) {
                     py_get.push_str(&p[0..1]);
                     break;
@@ -29,11 +29,8 @@ pub fn get_pinyin(text: &str) -> String {
     py_get
 }
 
-struct PyCode {}
-
-impl PyCode {
-    fn get_code() -> [&'static str; 399] {
-        [
+const PY_CODE: [&'static str; 399] =
+    [
         "a     :阿啊吖嗄腌锕",
         "ai    :爱埃碍矮挨唉哎哀皑癌蔼艾隘捱嗳嗌嫒瑷暧砹锿霭",
         "an    :安按暗岸案俺氨胺鞍谙埯揞犴庵桉铵鹌黯",
@@ -433,6 +430,4 @@ impl PyCode {
         "zui   :最罪嘴醉蕞",
         "zun   :尊遵撙樽鳟",
         "zuo   :作做左座坐昨佐柞阼唑嘬怍胙祚"
-    ]
-    }
-}
+    ];
