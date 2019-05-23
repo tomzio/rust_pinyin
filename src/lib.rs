@@ -26,7 +26,7 @@ pub fn get_pinyin(text: &str) -> String {
         }
     }
 
-    py_get
+    py_get.to_lowercase()
 }
 
 const PY_CODE: [&'static str; 399] =
