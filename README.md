@@ -1,7 +1,7 @@
 # rust_pinyin
-Chinese pinyin initials in rust
+Change chinese sentence to pinyin initials
 
-输入拼音首字母，获取全部中文词句, 适合自动完成功能
+将汉字转成拼音首字母，用于自动完成的快捷拼音输入
 
 ## Installation
 
