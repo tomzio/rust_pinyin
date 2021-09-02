@@ -14,7 +14,7 @@ rust-pinyin = "0.1"
 ## How to use:
 
 ```rust
-use rust-pinyin::get_pinyin;
+use rust_pinyin::get_pinyin;
 
 assert_eq!("zhq123vc", get_pinyin("张华强123vc"));
 assert_eq!("bjyrysmyxgs", get_pinyin("北京益瑞盈商贸有限公司"));
