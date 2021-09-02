@@ -3,5 +3,8 @@ name = "pinyin"
 version = "0.1.0"
 authors = ["zhou"]
 edition = "2018"
+license = "MIT OR Apache-2.0"
+keywords = ["pinyin", "chinese"]
+repository = "https://github.com/samlink/rust_pinyin"
 
 [dependencies]
