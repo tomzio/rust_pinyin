@@ -1,4 +1,4 @@
-# rust_pinyin
+# rust-pinyin
 Change chinese sentence to pinyin initials
 
 将汉字转成拼音首字母，用于自动完成的快捷拼音输入
