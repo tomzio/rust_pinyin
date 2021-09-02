@@ -1,5 +1,5 @@
 [package]
-name = "pinyin"
+name = "rust-pinyin"
 version = "0.1.0"
 authors = ["zhou"]
 edition = "2018"
