@@ -1,18 +1,34 @@
+extern crate wasm_bindgen;
+
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
+extern {
+    pub fn alert(s: &str);
+}
+
+#[wasm_bindgen]
+pub fn greet(name: &str) {
+    alert(&format!("Hello, {}!", name));
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn it_works() {
-        assert_eq!("zhq123vc", get_pinyin("张华强123vc"));
-        assert_eq!("bjyrysmyxgs", get_pinyin("北京益瑞盈商贸有限公司"));
-        assert_eq!("xnbjjsyxgs", get_pinyin("信念（北京）技术有限公司"));
+        assert_eq!("kjpysr123abc", get_pinyin("快捷拼音输入123abc"));
+        assert_eq!("amxlklwsjp", get_pinyin("阿莫西林克拉维酸钾片"));
+        assert_eq!("aboddka.kbddcd", get_pinyin("ABO滴度（抗A.抗B滴度测定）"));
+        assert_eq!("pttzsy", get_pinyin("葡萄糖注射夜"));
     }
 }
 
+#[wasm_bindgen]
 /// 功能：将汉字转成拼音首字母，用于自动完成的快捷拼音输入
-/// 参数：text, 汉字字符串，如：北京易瑞盈商贸有限公司
-/// 返回：String, 拼音首字母字符串，如：bjyrysmyxgs
+/// 参数：text, 汉字字符串，如：阿莫西林克拉维酸钾片
+/// 返回：String, 拼音首字母字符串，如：amxlklwsjp
 pub fn get_pinyin(text: &str) -> String {
     let mut py_get = String::new();
     for t in text.chars() {

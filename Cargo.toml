@@ -1,11 +1,15 @@
 [package]
 name = "rust-pinyin"
-version = "0.1.1"
+version = "0.1.0"
 authors = ["zhou"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
 description = "Change chinese sentence to pinyin initials"
 keywords = ["pinyin", "chinese"]
-repository = "https://github.com/samlink/rust_pinyin"
+repository = "https://github.com/tomzio/rust_pinyin"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
+wasm-bindgen = "*"
